@@ -181,6 +181,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GPUOpenCLProjectforWindows.cpp" />
+    <ClCompile Include="set2_host.cpp" />
+    <ClCompile Include="set2_source1.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
