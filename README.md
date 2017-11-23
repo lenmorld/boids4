@@ -1,3 +1,30 @@
+currently on:
+GPUOpenCLProjectforWindows.cpp
+
+TODO:
+
+apply code to create context (combined or separate)
+for the simple vector addition algorithm
+
+goal: execute kernel both in CPU and GPU in parallel
+
+=====================================
+
+=> found a script that displays both:
+
+1. Device: Intel(R) HD Graphics 620
+ 1.1 Hardware version: OpenCL 2.1
+ 1.2 Software version: 21.20.16.4590
+ 1.3 OpenCL C version: OpenCL C 2.0
+ 1.4 Parallel compute units: 24
+2. Device: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+ 2.1 Hardware version: OpenCL 2.1 (Build 2)
+ 2.2 Software version: 6.8.0.2
+ 2.3 OpenCL C version: OpenCL C 2.0
+ 2.4 Parallel compute units: 4
+
+=======================================
+
 TODO:
 try in lab computers if more than 1 device/platform found
 

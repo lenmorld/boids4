@@ -27,6 +27,12 @@
     <ClCompile Include="set2_source1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="get_devices.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="get_platforms.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.h">
@@ -40,5 +46,10 @@
     <Intel_OpenCL_Build_Rules Include="Template.cl">
       <Filter>OpenCL Files</Filter>
     </Intel_OpenCL_Build_Rules>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="orig.cpp.bak">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

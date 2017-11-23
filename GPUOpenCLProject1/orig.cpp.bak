@@ -38,53 +38,6 @@ int main(void) {
 	source_size = fread(source_str, 1, MAX_SOURCE_SIZE, fp);
 	fclose(fp);
 
-	
-	//====================
-
-	int k, l;
-	char* value;
-	size_t valueSize;
-	cl_uint platformCount;
-	cl_platform_id* platforms;
-	cl_uint deviceCount;
-	cl_device_id* devices;
-	cl_uint maxComputeUnits;
-
-	// get all platforms							----> only 1
-	clGetPlatformIDs(0, NULL, &platformCount);
-	platforms = (cl_platform_id*)malloc(sizeof(cl_platform_id) * platformCount);
-	clGetPlatformIDs(platformCount, platforms, NULL);
-
-	for (k = 0; k < platformCount; k++) {
-
-		// get all devices
-		clGetDeviceIDs(platforms[k], CL_DEVICE_TYPE_ALL, 0, NULL, &deviceCount);
-		devices = (cl_device_id*)malloc(sizeof(cl_device_id) * deviceCount);
-		clGetDeviceIDs(platforms[k], CL_DEVICE_TYPE_ALL, deviceCount, devices, NULL);
-
-		for (l = 0; l < deviceCount; l++) {
-		// print device name
-		clGetDeviceInfo(devices[l], CL_DEVICE_NAME, 0, NULL, &valueSize);
-		value = (char*)malloc(valueSize);
-		clGetDeviceInfo(devices[l], CL_DEVICE_NAME, valueSize, value, NULL);
-		printf("%d. Device: %s\n", l + 1, value);
-		free(value);
-
-		// print parallel compute units
-		clGetDeviceInfo(devices[l], CL_DEVICE_MAX_COMPUTE_UNITS,
-			sizeof(maxComputeUnits), &maxComputeUnits, NULL);
-		printf(" %d.%d Parallel compute units: %d\n", l + 1, 4, maxComputeUnits);
-
-		}
-
-		free(devices);
-	}
-
-	free(platforms);
-
-
-	// ================================================
-
 	// Get platform and device information
 	cl_platform_id platform_id = NULL;
 	cl_platform_id platform_id2 = NULL;
@@ -130,6 +83,7 @@ int main(void) {
 
 	// Create a command queue
 	cl_command_queue command_queue = clCreateCommandQueue(context, device_id, 0, &ret);				// GPU
+
 
 	cl_command_queue command_queue_cpu = clCreateCommandQueue(context2, device_id2, 0, &ret2);				// GPU
 
